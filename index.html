@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gertrude Chidubem — Portfolio</title>
+  <meta name="description" content="Gertrude Chidubem Amamchukwu — projects, blog and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1120; --muted:#94a3b8; --accent:#7c3aed; --glass: rgba(255,255,255,0.04);
+      --maxw:1100px; --radius:14px; --gap:18px;
+      --text:#e6eef8;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background: linear-gradient(180deg, #071029 0%, #071224 100%); color:var(--text); -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale; line-height:1.45;
+      padding:36px 20px;
+      display:flex; justify-content:center;
+    }
+    .container{width:100%; max-width:var(--maxw);} 
+    header{display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:34px}
+    .brand{display:flex; align-items:center; gap:14px}
+    .avatar{width:64px; height:64px; border-radius:12px; background:linear-gradient(135deg,var(--accent),#06b6d4); display:grid; place-items:center; font-weight:700}
+    h1{margin:0; font-size:20px}
+    p.lead{margin:0; color:var(--muted)}
+
+    .grid{display:grid; grid-template-columns: 1fr 380px; gap:var(--gap)}
+    .card{background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:var(--radius); padding:20px; box-shadow: 0 6px 18px rgba(2,6,23,0.6)}
+
+    .section-title{display:flex; align-items:center; justify-content:space-between; gap:12px}
+    .projects{display:grid; gap:14px; margin-top:14px}
+    .project{display:flex; gap:14px; align-items:center}
+    .thumb{width:76px; height:52px; border-radius:10px; background:var(--glass); display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:600}
+    .project h3{margin:0; font-size:15px}
+    .project p{margin:4px 0 0 0; color:var(--muted); font-size:13px}
+
+    aside .card{position:sticky; top:36px}
+    .bio{font-size:14px; color:var(--muted)}
+    .cta{display:flex; gap:12px; margin-top:16px}
+    .btn{background:var(--accent); color:white; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:600}
+    .outline{background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--text); padding:10px 14px; border-radius:10px; text-decoration:none}
+
+    footer{margin-top:28px; color:var(--muted); font-size:13px; text-align:center}
+
+    /* responsive */
+    @media (max-width:900px){
+      .grid{grid-template-columns: 1fr;}
+      aside{order:2}
+      header{flex-direction:column; align-items:flex-start}
+      .avatar{width:56px;height:56px}
+    }
+
+    /* simple badge list */
+    .skills{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .skill{font-size:13px; color:var(--muted); background:rgba(255,255,255,0.02); padding:6px 10px; border-radius:8px}
+
+    /* contact form */
+    form{display:grid; gap:10px}
+    input,textarea{background:transparent; border:1px solid rgba(255,255,255,0.05); color:var(--text); padding:10px; border-radius:8px}
+    textarea{min-height:100px}
+
+    .theme-toggle{cursor:pointer; padding:8px; border-radius:10px; background:rgba(255,255,255,0.02)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="avatar">G</div>
+        <div>
+          <h1>Gertrude Chidubem Amamchukwu</h1>
+          <p class="lead">Statistician · Data Scientist · Educator</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+        <a class="outline" href="#contact">Contact</a>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section class="card">
+          <div class="section-title">
+            <div>
+              <h2 style="margin:0">About</h2>
+              <p class="lead">Short intro</p>
+            </div>
+            <div style="text-align:right; color:var(--muted)">Based in Nigeria</div>
+          </div>
+
+          <div style="margin-top:12px" class="bio">
+            Hi — I'm Gertrude. I build reproducible data-analysis pipelines, teach statistics, and design experiments. I enjoy turning messy data into clear, actionable insights.
+          </div>
+
+          <div style="margin-top:14px">
+            <strong>Skills</strong>
+            <div class="skills">
+              <div class="skill">R</div>
+              <div class="skill">Python</div>
+              <div class="skill">Design of Experiments</div>
+              <div class="skill">ANOVA</div>
+              <div class="skill">SQL</div>
+              <div class="skill">Machine Learning</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <div class="section-title"><h3 style="margin:0">Featured Projects</h3><a href="#projects" class="outline">See all</a></div>
+          <div class="projects" id="projects">
+            <article class="project">
+              <div class="thumb">DS</div>
+              <div>
+                <h3>Design of Experiments tutorial</h3>
+                <p>Interactive notes and R scripts for factorial ANOVA and CRD.</p>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="thumb">ML</div>
+              <div>
+                <h3>Machine performance analysis</h3>
+                <p>End-to-end analysis comparing four machines using ANOVA and post-hoc tests.</p>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="thumb">Blog</div>
+              <div>
+                <h3>Statistics lessons</h3>
+                <p>Clear lesson notes on regression, hypothesis testing and quality control.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <div class="section-title"><h3 style="margin:0">Latest Posts</h3><a href="#blog" class="outline">View blog</a></div>
+          <ul style="margin-top:12px; padding-left:18px; color:var(--muted)">
+            <li><strong>Understanding ANOVA (Oct 2025)</strong> — an intuitive walk-through with examples.</li>
+            <li><strong>Designing experiments with limited resources</strong> — practical tips and checklists.</li>
+          </ul>
+        </section>
+
+      </main>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin:0">Contact</h3>
+          <p class="lead" style="margin-top:6px">Want to work together or request a lesson? Send a message.</p>
+
+          <form id="contact" action="mailto:your@email.example" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Message" required></textarea>
+            <div style="display:flex; gap:8px">
+              <button class="btn" type="submit">Send</button>
+              <a class="outline" href="mailto:your@email.example">Email</a>
+            </div>
+          </form>
+
+          <div style="margin-top:14px">
+            <strong>Quick links</strong>
+            <ul style="padding-left:18px; color:var(--muted); margin:8px 0 0 0">
+              <li><a href="https://github.com/Gertrude1bip" style="color:inherit; text-decoration:underline">GitHub</a></li>
+              <li><a href="#" style="color:inherit; text-decoration:underline">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h4 style="margin:0">Subscribe</h4>
+          <p class="lead" style="margin-top:6px">Get notified when new lesson notes are posted.</p>
+          <form onsubmit="event.preventDefault(); alert('Thanks — subscription placeholder')">
+            <input type="email" placeholder="Your email" required>
+            <div style="display:flex; gap:8px; margin-top:8px">
+              <button class="btn" type="submit">Subscribe</button>
+              <button class="outline" onclick="event.preventDefault();alert('Follow me on GitHub')">Follow</button>
+            </div>
+          </form>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Gertrude Chidubem — Built with ❤️ • Hosted on GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    // tiny scripts
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', ()=>{
+      if(document.documentElement.style.getPropertyValue('--bg') === ''){
+        // fallback: toggle a light theme
+        document.body.style.background = '#f7f9fc'; document.body.style.color = '#0b1220';
+      } else {
+        document.body.style.background = '';
+        document.body.style.color = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
